@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/Guest/AndroidStudioProjects/MyApplication2/app/src/main/res/drawable-v24/correct_option_border_bg.xml" value="0.37552083333333336" />
+        <entry key="..\:/Users/Guest/AndroidStudioProjects/MyApplication2/app/src/main/res/drawable-v24/selected_option_border_bg.xml" value="0.37552083333333336" />
+        <entry key="..\:/Users/Guest/AndroidStudioProjects/MyApplication2/app/src/main/res/drawable-v24/uncorrect_option_border_bg.xml" value="0.37552083333333336" />
+        <entry key="..\:/Users/Guest/AndroidStudioProjects/MyApplication2/app/src/main/res/drawable/default_option_border_bg.xml" value="0.37552083333333336" />
+        <entry key="..\:/Users/Guest/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/activity_main.xml" value="0.27898550724637683" />
+        <entry key="..\:/Users/Guest/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/activity_quiz_questions.xml" value="0.25" />
+        <entry key="..\:/Users/Guest/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/activity_result.xml" value="0.359375" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
