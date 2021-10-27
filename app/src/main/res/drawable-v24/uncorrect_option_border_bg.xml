@@ -5,6 +5,6 @@
     <solid
         android:color="@android:color/holo_red_light"/>
     <corners
-        android:radius="5dp"/>
+        android:radius="15dp"/>
 
 </shape>

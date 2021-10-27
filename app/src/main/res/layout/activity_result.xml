@@ -1,9 +1,157 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ResultActivity">
 
-</LinearLayout>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/bg_result"
+        android:scaleType="centerCrop"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/ic_trophy"
+            android:layout_above="@+id/tv_congratulations"
+            android:layout_marginBottom="10dp"/>
+
+        <TextView
+            android:id="@+id/tv_congratulations"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/cv_score"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="@font/josefinsans_bold"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="28sp"
+            tools:text="Well played Ivan" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_score"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="25dp"
+            app:cardElevation="5dp"
+            android:layout_marginStart="35dp"
+            android:layout_marginEnd="35dp"
+            android:layout_gravity="center"
+            android:layout_centerInParent="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:paddingBottom="15dp"
+                android:paddingTop="15dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:layout_marginBottom="30dp">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_star"
+                        android:layout_marginEnd="2dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Score"
+                        android:fontFamily="@font/josefinsans_semibold"
+                        android:gravity="center"
+                        android:textSize="25sp"
+                        android:textColor="#4E4D4D"
+                        android:textStyle="bold"
+                        android:layout_marginStart="2dp"/>
+
+
+                </LinearLayout>
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp">
+
+                    <com.google.android.material.progressindicator.CircularProgressIndicator
+                        android:id="@+id/pb_result"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        app:indicatorSize="180dp"
+                        android:max="10"
+                        android:progress="0"
+                        tools:progress="5"
+                        android:indeterminate="false"
+                        app:trackThickness="15dp"
+                        app:trackColor="@color/light_orange"
+                        app:indicatorColor="@color/medium_orange"
+                        app:trackCornerRadius="15dp"/>
+
+                    <TextView
+                        android:id="@+id/tv_result_points"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        tools:text="75"
+                        android:textColor="#4E4D4D"
+                        android:fontFamily="@font/josefinsans_bold"
+                        android:textSize="50sp"/>
+
+                </FrameLayout>
+
+
+                <TextView
+                    android:id="@+id/tv_score"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textSize="17sp"
+                    android:fontFamily="@font/josefinsans_bold"
+                    tools:text="Your score was 75 points."
+                    android:textStyle="bold"
+                    android:textColor="#4E4D4D"
+                    android:layout_marginBottom="20dp"/>
+
+
+            </LinearLayout>
+
+
+
+        </androidx.cardview.widget.CardView>
+
+
+        <Button
+            android:id="@+id/btn_another_shot"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/button_background"
+            android:fontFamily="@font/josefinsans_bold"
+            android:letterSpacing="0.01"
+            android:padding="14dp"
+            android:text="Take another shot"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+    </RelativeLayout>
+
+
+</FrameLayout>

@@ -75,7 +75,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Name:"
-                        android:inputType="text"
                         android:fontFamily="@font/josefinsans_regular"
                         android:textColor="#363A43"
                         android:textColorHint="#7A8089" />
@@ -93,8 +92,7 @@
                     android:layout_marginLeft="60dp"
                     android:layout_marginRight="60dp"
                     android:textSize="18sp"
-                    android:textColor="@color/white"
-                    android:elevation="10dp"/>
+                    android:textColor="@color/white"/>
 
 
             </LinearLayout>

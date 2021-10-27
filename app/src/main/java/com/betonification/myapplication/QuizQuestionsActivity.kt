@@ -1,6 +1,7 @@
 package com.betonification.myapplication
 
 import android.animation.ObjectAnimator
+import android.content.Intent
 import android.graphics.Color
 import android.graphics.Typeface
 import androidx.appcompat.app.AppCompatActivity
@@ -23,15 +24,21 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
     private var correctAnswersNumber = 10
     private var selectedAnswer = false
     private var submittedAnswer = false
+    private var userName: String? = null
+    private var answeredCorrectly = true
+    private var score = 0
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_quiz_questions)
 
+        userName = intent.getStringExtra(Constants.USERNAME) // prihvata se podatak o imenu u userName promenjljivu kako bi se kasnije prosledio dalje do result activitija
 
+        // preuzimanje liste pitanja i mesanje kako ne bi uvek isla istim redosledom
         questionsList = Constants.getQuestions()
         questionsList!!.shuffle()
+
         setQuestion()
 
         tv_option_one.setOnClickListener(this)
@@ -39,8 +46,12 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
         tv_option_three.setOnClickListener(this)
         tv_option_four.setOnClickListener(this)
         btn_submit_or_next.setOnClickListener(this)
+
     }
+
+    // funkcija za postavljanje pitanja, odnosno postavljanje pitanja i ponudjenih odgovora u njima namenjene view-ove
     fun setQuestion() {
+        answeredCorrectly = true
         defaultOptionsView()
         selectedAnswer = false
         submittedAnswer = false
@@ -58,6 +69,7 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
         tv_option_four.text = question.optionFour
     }
 
+    // funkcija za postavljanje izgleda textview-ova ponudjenih odgovora u default stanje
     fun defaultOptionsView(){
         val options = ArrayList<TextView>()
         options.add(0, tv_option_one)
@@ -70,6 +82,7 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
             option.background = ContextCompat.getDrawable(this, R.drawable.default_option_border_bg)
         }
     }
+
 
     override fun onClick(v: View?) {
 
@@ -93,7 +106,11 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
                         currentPosition <= questionsList!!.size -> {
                             setQuestion()
                         }else -> {
-                        Toast.makeText(this, "Congratulations", Toast.LENGTH_SHORT).show()
+                            val intent = Intent(this,ResultActivity::class.java)
+                            intent.putExtra(Constants.USERNAME, userName)
+                            intent.putExtra(Constants.SCORE, correctAnswersNumber)
+                            startActivity(intent)
+                            finish()
                         }
                     }
                 }else if (selectedAnswer){
@@ -101,8 +118,13 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
                     if (question!!.correctAnswer != selectedOptionPosition){
                         answerView(selectedOptionPosition, R.drawable.uncorrect_option_border_bg)
                         correctAnswersNumber--
+                        answeredCorrectly = false
                     }
                     answerView(question.correctAnswer, R.drawable.correct_option_border_bg)
+                    if (answeredCorrectly){
+                        score += 10
+                    }
+                    tv_points.text = "$score/100"
                     submittedAnswer = true
                     if(currentPosition == questionsList!!.size){
                         btn_submit_or_next.text = "FINISH"
@@ -115,6 +137,7 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
         }
     }
 
+    // funkcija koja sluzi samo da olaksa postavljanje pozadine tacnog i netacnog odgovora
     private fun answerView(answer: Int, drawableView: Int){
         when (answer){
             1 -> tv_option_one.background = ContextCompat.getDrawable(this,drawableView)
@@ -124,7 +147,9 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
         }
     }
 
+    //funkcija za postavljanje izgleda textview-a izabranog odgovora
     private fun selectedOptionView(tv: TextView, selectedOptionNumber: Int){
+        // radi samo ukoliko nije vec dat konacan odgovor
         if(!submittedAnswer) {
             defaultOptionsView()
             selectedOptionPosition = selectedOptionNumber

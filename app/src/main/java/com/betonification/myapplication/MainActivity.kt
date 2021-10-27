@@ -1,6 +1,7 @@
 package com.betonification.myapplication
 
 import android.content.Intent
+import android.graphics.Point
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -18,6 +19,7 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this, "Please enter your name", Toast.LENGTH_SHORT).show()
             }else{
                 val intent = Intent(this, QuizQuestionsActivity::class.java)
+                intent.putExtra(Constants.USERNAME, et_name.text.toString()) // prosledjuje se podatak o imenu u sledeci acitivity
                 startActivity(intent)
                 finish()
             }

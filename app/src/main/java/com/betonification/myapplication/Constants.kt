@@ -2,6 +2,9 @@ package com.betonification.myapplication
 
 object Constants{
 
+    val USERNAME = "username"
+    val SCORE = "score"
+
     fun getQuestions(): ArrayList<Question>{
         val questionsList = ArrayList<Question>()
 

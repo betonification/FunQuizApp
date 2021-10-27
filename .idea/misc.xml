@@ -4,12 +4,17 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Guest/AndroidStudioProjects/MyApplication2/app/src/main/res/drawable-v24/correct_option_border_bg.xml" value="0.37552083333333336" />
+        <entry key="..\:/Users/Guest/AndroidStudioProjects/MyApplication2/app/src/main/res/drawable-v24/edittext_background.xml" value="0.30811965811965814" />
         <entry key="..\:/Users/Guest/AndroidStudioProjects/MyApplication2/app/src/main/res/drawable-v24/selected_option_border_bg.xml" value="0.37552083333333336" />
         <entry key="..\:/Users/Guest/AndroidStudioProjects/MyApplication2/app/src/main/res/drawable-v24/uncorrect_option_border_bg.xml" value="0.37552083333333336" />
+        <entry key="..\:/Users/Guest/AndroidStudioProjects/MyApplication2/app/src/main/res/drawable/bg_custom_welcomepage_background.xml" value="0.3337962962962963" />
+        <entry key="..\:/Users/Guest/AndroidStudioProjects/MyApplication2/app/src/main/res/drawable/button_background.xml" value="0.30811965811965814" />
+        <entry key="..\:/Users/Guest/AndroidStudioProjects/MyApplication2/app/src/main/res/drawable/custom_progressar.xml" value="0.30811965811965814" />
         <entry key="..\:/Users/Guest/AndroidStudioProjects/MyApplication2/app/src/main/res/drawable/default_option_border_bg.xml" value="0.37552083333333336" />
-        <entry key="..\:/Users/Guest/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/activity_main.xml" value="0.27898550724637683" />
+        <entry key="..\:/Users/Guest/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/Guest/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/activity_main_tall.xml" value="0.2948717948717949" />
         <entry key="..\:/Users/Guest/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/activity_quiz_questions.xml" value="0.25" />
-        <entry key="..\:/Users/Guest/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/activity_result.xml" value="0.359375" />
+        <entry key="..\:/Users/Guest/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/activity_result.xml" value="0.25" />
       </map>
     </option>
   </component>
